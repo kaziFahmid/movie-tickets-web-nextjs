@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import { GrMenu } from 'react-icons/gr';
 import Cookies from 'js-cookie';
+import Image from 'next/image';
 const Navbar = () => {
   const { data: session, status } = useSession();
   const [isOpen, setIsOpen] = useState(false);
@@ -40,7 +41,7 @@ const Navbar = () => {
           {status === 'authenticated'&&
   <div className="avatar  mt-2 flex justify-center">
   <div className="w-10 rounded-full  ">
-    <img src={session?.user.image} />
+    <Image alt='person' src={session?.user.image} width={50} height={50} />
   </div>
 </div>}
 
@@ -114,7 +115,7 @@ const Navbar = () => {
 {status === 'authenticated'&&<li>
   <div className="avatar">
   <div className="w-10 rounded-full">
-    <img src={session?.user.image} />
+    <Image alt='person' src={session?.user.image} width={50} height={50}/>
   </div>
 </div></li>}
  {status==='authenticated'?'':<li className='cursor-pointer hover:text-yellow-500 duration-500'><Link href='/signup'>Signup</Link></li>}

@@ -1,5 +1,6 @@
 "use client"
 import { useSession } from 'next-auth/react';
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import { Toaster, toast } from 'react-hot-toast';
 
@@ -116,7 +117,7 @@ let handleCancelRefund= async(id)=>{
             {bookings.map((booking, index) => (
               <tr key={index}>
                 <td>{index + 1}</td>
-                <td><img src={booking.moviePoster} alt="Movie" className="w-16 h-16 object-cover" /></td>
+                <td><Image src={booking.moviePoster} alt="Movie" width={60} height={60} /></td>
                 <td>{booking.movieName}</td>
                 <td>{booking.moviePrice}</td>
                 <td>{booking.email}</td>

@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image';
 import useSWR,{ mutate }from 'swr'; 
 
 
@@ -83,7 +84,7 @@ const AllUsers = () => {
                 
                 <div className="avatar">
   <div className="w-12 rounded-full">
-    <img src={user?.image} />
+    <Image src={user?.image} width={20}height={20} />
   </div>
 </div>
                 
