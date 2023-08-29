@@ -6,7 +6,7 @@ import Cookies from 'js-cookie';
 import { useRouter, useSearchParams } from 'next/navigation';
 
 
-const Login = () => {
+const Signup = () => {
   const { data: session, status } = useSession();
 
 const search=useSearchParams()
