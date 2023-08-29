@@ -1,22 +1,15 @@
-"use client"
-import AOS from 'aos';
-import 'aos/dist/aos.css'
+
+
 
 const AboutUs = () => {
 
-  AOS.init({
-    offset: 200,
-    duration: 600,
-    easing: 'ease-in-sine',
-    delay: 100,
-  });
 
   return (
     <div
       id="about"
       className="lg:grid-cols-2 grid grid-cols-1 justify-center items-center mt-36 max-w-6xl mx-auto gap-8"
     >
-      <div data-aos="fade-right"  >
+      <div  >
         <h1 className="text-white font-semibold text-4xl mb-5">About US</h1>
         <p className="text-gray-400 text-justify">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
@@ -26,7 +19,7 @@ const AboutUs = () => {
           veritatis dolor eligendi!
         </p>
       </div>
-      <div  data-aos="fade-down">
+      <div  >
         <iframe
           className="w-full h-96"
           src="https://www.youtube.com/embed/COvnHv42T-A"

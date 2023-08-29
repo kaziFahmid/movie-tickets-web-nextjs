@@ -1,15 +1,8 @@
-"use client"
-import React from 'react'
-import AOS from 'aos';
-import 'aos/dist/aos.css'
+
+
+
 const FeedBack = () => {
 
-  AOS.init({
-    offset: 200,
-    duration: 600,
-    easing: 'ease-in-sine',
-    delay: 100,
-  });
 
   return (
     <>
@@ -17,7 +10,7 @@ const FeedBack = () => {
     <div className='text-center mt-32'>
       <h1 className='text-4xl font-bold text-white'>FeedBacks</h1>
     </div>
-<section data-aos="fade-right" className='grid lg:grid-cols-3 grid-cols-1'>
+<section  className='grid lg:grid-cols-3 grid-cols-1'>
 
 <div className="flex flex-col justify-between rounded-md border border-neutral-800 bg-black p-8 shadow-sm max-w-sm mx-auto mt-24">
 
