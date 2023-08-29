@@ -84,7 +84,7 @@ const AllUsers = () => {
                 
                 <div className="avatar">
   <div className="w-12 rounded-full">
-    <Image src={user?.image} width={20}height={20} />
+    <Image src={user?.image} width={20}height={20} alt='avatar' />
   </div>
 </div>
                 

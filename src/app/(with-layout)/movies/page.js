@@ -21,11 +21,11 @@ const Movies = async() => {
     {movies.map(({_id,original_title,release_date,poster_path})=>
     
 
-    <div className=" mx-auto h-fit group rounded-lg  mt-5  hover:scale-110 duration-500 transform-gpu cursor-pointer ">
+    <div key={_id} className=" mx-auto h-fit group rounded-lg  mt-5  hover:scale-110 duration-500 transform-gpu cursor-pointer ">
     <div className="relative overflow-hidden">
       <Image  src={poster_path} width={260} height={260} alt="movie"/>
       <div className="absolute h-full w-full bg-yellow-300/30 flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-      <Link href={`/movies/${_id}`} key={_id}>    <button className="bg-black hover:bg-yellow-300 hover:text-black duration-300 text-white py-2 px-5">Book Now</button>
+      <Link href={`/movies/${_id}`} >    <button className="bg-black hover:bg-yellow-300 hover:text-black duration-300 text-white py-2 px-5">Book Now</button>
       </Link>
       </div>
     </div>

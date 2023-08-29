@@ -115,7 +115,7 @@ let handleAcceptRefund= async(_id)=>{
     
     <div className="avatar">
   <div className="w-14 rounded">
-    <Image src={x?.moviePoster} width={50} height={50}alt="Tailwind-CSS-Avatar-component" />
+    <Image src={x?.moviePoster} width={50} height={50} alt="Tailwind-CSS-Avatar-component" />
   </div>
 </div>
     

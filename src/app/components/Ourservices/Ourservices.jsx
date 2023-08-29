@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { BiSolidCameraMovie } from 'react-icons/bi';
 const Ourservices = () => {
   return (
