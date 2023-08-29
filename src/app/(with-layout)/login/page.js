@@ -49,7 +49,7 @@ const {replace}=useRouter()
     };
 
     fetchData();
-  }, [status, session]);
+  }, [status, session,from,replace]);
 
   return (
     <div className='flex h-screen justify-center items-center'>

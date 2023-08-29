@@ -185,7 +185,7 @@ useEffect(() => {
           <div className='rounded-lg mt-5 absolute top-20 md:left-10'>
             
             <Image
-              className='rounded-lg'
+
               src={movie.poster_path || '/placeholder-image.jpg'}
               width={260}
               height={260}
