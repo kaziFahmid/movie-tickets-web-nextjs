@@ -19,7 +19,7 @@ const fetcher = async (url) => {
 
 
 const AllUsers = () => {
-  const { data: users, error } = useSWR('http://localhost:3000/api/users',fetcher);
+  const { data: users, error } = useSWR(`${process.env.NEXT_PUBLIC_DEV_API_URL}/api/users`,fetcher);
 
 
   if (error) {
@@ -27,7 +27,7 @@ const AllUsers = () => {
   }
   const handleMakeAdmin = async (_id) => {
     try {
-      await fetch(`http://localhost:3000/api/users/${_id}`, {
+      await fetch(`${process.env.NEXT_PUBLIC_DEV_API_URL}/api/users/${_id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ const AllUsers = () => {
         body: JSON.stringify({ role: 'admin' }),
       });
       
-      mutate('http://localhost:3000/api/users');
+      mutate(`${process.env.NEXT_PUBLIC_DEV_API_URL}/api/users`);
 ;
     } catch (error) {
       console.error('Error making user admin:', error);
@@ -44,7 +44,7 @@ const AllUsers = () => {
 
   const handleMakeUser = async (_id) => {
     try {
-      await fetch(`http://localhost:3000/api/users/${_id}`, {
+      await fetch(`${process.env.NEXT_PUBLIC_DEV_API_URL}/api/users/${_id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ const AllUsers = () => {
         body: JSON.stringify({ role: 'user' }),
       });
    
-      mutate('http://localhost:3000/api/users');
+      mutate(`${process.env.NEXT_PUBLIC_DEV_API_URL}/api/users`);
     } catch (error) {
       console.error('Error making user a user:', error);
     }

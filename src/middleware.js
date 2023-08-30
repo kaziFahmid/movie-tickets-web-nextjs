@@ -4,7 +4,7 @@ export const middleware = async (request) => {
   const sessionEmail = request.cookies.get('sessionEmail')?.value;
 
 const{pathname}=request.nextUrl
-  let res = await fetch(`http://localhost:3000/api/admin/${sessionEmail}`);
+  let res = await fetch(`${process.env.NEXT_PUBLIC_DEV_API_URL}/api/admin/${sessionEmail}`);
   let admin = await res.json();
   if (!sessionEmail) {
     return NextResponse.redirect(new URL(`/login?redirectUrl=${pathname}`, request.url));
@@ -26,7 +26,7 @@ const{pathname}=request.nextUrl
 
 
 
-  let response = await fetch(`http://localhost:3000/api/user/${sessionEmail}`);
+  let response = await fetch(`${process.env.NEXT_PUBLIC_DEV_API_URL}/api/user/${sessionEmail}`);
   let user = await response.json();
 
   if (user?.result === false && request.nextUrl.pathname.startsWith('/dashboard/mybookings')) {

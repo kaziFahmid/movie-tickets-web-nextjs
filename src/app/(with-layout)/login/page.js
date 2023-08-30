@@ -29,7 +29,7 @@ const {replace}=useRouter()
         };
     
         try {
-          const response = await fetch('http://localhost:3000/api/users', {
+          const response = await fetch(`${process.env.NEXT_PUBLIC_DEV_API_URL}api/users`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

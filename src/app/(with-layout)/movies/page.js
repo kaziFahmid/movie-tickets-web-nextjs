@@ -8,7 +8,7 @@ export const metadata = {
 }
 
 const Movies = async() => {
-    const response = await fetch('http://localhost:3000/api/movie',{cache:'no-cache'});
+    const response = await fetch(`${process.env.NEXT_PUBLIC_DEV_API_URL}/api/movie`,{cache:'no-cache'});
     const movies = await response.json();
     
   return (
