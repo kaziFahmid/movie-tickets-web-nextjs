@@ -1,11 +1,12 @@
+import DbConnect from '@/db.config'
 import { NextResponse } from 'next/server'
-import dbConnect from '../../db.config'
+
 
 
 
 export async function POST(request) {
     let user= await request.json()
-    let client= await dbConnect()
+    let client= await DbConnect()
     const db= client.db('movieusersDB')
 const movieUsersCollections=db.collection('movieUsersCollections')
 let existingUser= await movieUsersCollections.findOne({email: user.email})
@@ -17,7 +18,7 @@ let result= await movieUsersCollections.insertOne(user)
 }
 
 export async function  GET() {
-    let client= await dbConnect()
+    let client= await DbConnect()
     const db= client.db('movieusersDB')
 const movieUsersCollections=db.collection('movieUsersCollections')
 let result= await movieUsersCollections.find().toArray()

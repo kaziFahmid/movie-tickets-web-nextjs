@@ -8,7 +8,9 @@ const Quality = () => {
             <h1 className='text-white text-3xl font-bold'>NEED QUALITY MOVIE OR VIDEO? CHOOSE YOUR PLAN NOW</h1>
             </div>
 
-      <Image src='https://i.ibb.co/FHm0DjZ/deadpool-14354.png' className='mb-44' width={300} height={300} alt='deadpool' />
+    <div className='w-[300px] h-[416px] mb-44 overflow-hidden'>
+    <Image src='https://i.ibb.co/FHm0DjZ/deadpool-14354.png' className=' w-full h-full object-cover ' width={300} height={300} alt='deadpool' priority />
+    </div>
     </section>
   )
 }

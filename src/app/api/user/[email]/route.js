@@ -1,9 +1,10 @@
-import dbConnect from "@/app/db.config";
+
+import DbConnect from "@/db.config";
 import { NextResponse } from "next/server";
 
 export async function GET(request, { params }) {
   try {
-    const client = await dbConnect();
+    const client = await DbConnect();
     const db = client.db('movieusersDB');
     const movieUsersCollections = db.collection('movieUsersCollections');
     const email = params.email;

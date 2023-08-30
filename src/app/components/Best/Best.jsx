@@ -8,9 +8,10 @@ const Best = () => {
 
   return (
     <section className='grid lg:grid-cols-2 grid-cols-1 max-w-6xl mx-auto gap-6 mt-32'>
-      <div >
-<Image src={'https://i.ibb.co/XzKNpkh/War-PNG-Clipart.png'} width={550} height={550} alt='picture'/>
-      </div>
+      <div className='w-[550px] h-[375px] overflow-hidden' > 
+ <Image className='w-full h-full object-cover' src='https://i.ibb.co/XzKNpkh/War-PNG-Clipart.png' priority width={500} height={500} alt='movies'/>
+ </div>
+
       <div className='text-white flex justify-center items-center'> 
       <div >
       <h1 className='text-white text-4xl font-semibold mb-5'>The Best Movies in this platform </h1>

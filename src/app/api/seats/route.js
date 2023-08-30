@@ -1,9 +1,10 @@
+import DbConnect from '@/db.config'
 import { NextResponse } from 'next/server'
-import dbConnect from '../../db.config'
+
 
 
 export async function  GET() {
-    let client= await dbConnect()
+    let client= await DbConnect()
     const db= client.db('SeatsDB')
 const SeatsCollections=db.collection('SeatsCollections')
 let result= await SeatsCollections.find().toArray()

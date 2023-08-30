@@ -1,11 +1,12 @@
-import dbConnect from "@/app/db.config";
+
+import DbConnect from "@/db.config";
 import { ObjectId } from "mongodb";
 
 import { NextResponse } from "next/server";
 
 export async function PATCH(request, { params }) {
   try {
-    const client = await dbConnect();
+    const client = await DbConnect();
     const db = client.db('movieusersDB');
     const movieUsersCollections = db.collection('movieUsersCollections');
     const id = params.id;

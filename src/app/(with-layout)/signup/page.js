@@ -70,7 +70,7 @@ const {replace}=useRouter()
   );
 };
 
-export default Login;
+export default Signup;
 
 
 

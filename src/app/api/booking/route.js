@@ -1,11 +1,12 @@
 import { NextResponse } from 'next/server'
-import dbConnect from '../../db.config'
+
+import DbConnect from '../../../db.config'
 
 
 
 export async function POST(request) {
     let booking= await request.json()
-    let client= await dbConnect()
+    let client= await DbConnect()
     const db= client.db('moviebookingsDB')
 const moviebookingsCollections=db.collection('moviebookingsCollections')
 
@@ -14,7 +15,7 @@ let result= await moviebookingsCollections.insertOne(booking)
 }
 
 export async function  GET() {
-    let client= await dbConnect()
+    let client= await DbConnect()
     const db= client.db('moviebookingsDB')
 const moviebookingsCollections=db.collection('moviebookingsCollections')
 let result= await moviebookingsCollections.find().toArray()

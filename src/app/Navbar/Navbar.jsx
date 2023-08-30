@@ -40,8 +40,8 @@ const Navbar = () => {
         <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-300 divide-y divide-gray-300 rounded shadow-lg">
           {status === 'authenticated'&&
   <div className="avatar  mt-2 flex justify-center">
-  <div className="w-10 rounded-full  ">
-    <Image alt='person' src={session?.user.image} width={50} height={50} />
+  <div className="w-[40px] h-[40px] rounded-full  ">
+    <Image alt='person' className='w-full h-full object-cover' src={session?.user.image} width={50} height={50} priority/>
   </div>
 </div>}
 

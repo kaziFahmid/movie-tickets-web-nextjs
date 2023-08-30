@@ -8,7 +8,7 @@ export const metadata = {
 }
 
 const Movies = async() => {
-    const response = await fetch('http://localhost:3000/api/movie',{ cache: 'no-cache' });
+    const response = await fetch('http://localhost:3000/api/movie',{cache:'no-cache'});
     const movies = await response.json();
     
   return (
@@ -23,7 +23,10 @@ const Movies = async() => {
 
     <div key={_id} className=" mx-auto h-fit group rounded-lg  mt-5  hover:scale-110 duration-500 transform-gpu cursor-pointer ">
     <div className="relative overflow-hidden">
-      <Image  src={poster_path} width={260} height={260} alt="movie"/>
+    <div className='w-[250px] h-[375px] overflow-hidden' > 
+ <Image className='w-full h-full object-cover' src={poster_path} priority width={500} height={500} alt='movies'/>
+ </div>
+     
       <div className="absolute h-full w-full bg-yellow-300/30 flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
       <Link href={`/movies/${_id}`} >    <button className="bg-black hover:bg-yellow-300 hover:text-black duration-300 text-white py-2 px-5">Book Now</button>
       </Link>
