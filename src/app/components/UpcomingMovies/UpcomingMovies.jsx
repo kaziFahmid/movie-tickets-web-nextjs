@@ -1,8 +1,9 @@
 
 import Image from 'next/image'
 const UpcomingMovies =  async () => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_DEV_API_URL}/api/movie`,{ cache: 'no-cache' });
-    const movies = await response.json();
+    // const response = await fetch('http://localhost:3000/api/movie');
+    // const movies = await response.json();
+    let movies=[]
   return (
     <>
     <h1 className='text-white text-center lg:text-5xl text-3xl mt-40 font-semibold  '>Upcoming Movies</h1>

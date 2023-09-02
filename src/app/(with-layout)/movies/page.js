@@ -8,9 +8,9 @@ export const metadata = {
 }
 
 const Movies = async() => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_DEV_API_URL}/api/movie`,{cache:'no-cache'});
-    const movies = await response.json();
-    
+    // const response = await fetch('http://localhost:3000/api/movie');
+    // const movies = await response.json();
+    let movies=[]
   return (
     <>
     <section className= "flex justify-center items-center h-56 bg-center bg-cover bg-no-repeat bg-[linear-gradient(to_right_bottom,rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(https://images.thedirect.com/media/article_full/marvel-posters-ranked.jpg)]">
