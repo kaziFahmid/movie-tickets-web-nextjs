@@ -8,7 +8,7 @@ export const metadata = {
 }
 
 const Movies = async() => {
-    // const response = await fetch('http://localhost:3000/api/movie');
+    // const response = await fetch('https://movie-tickets-web-nextjs.vercel.app/api/movie');
     // const movies = await response.json();
     let movies=[]
   return (

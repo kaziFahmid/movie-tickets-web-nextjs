@@ -1,9 +1,9 @@
 
 import Image from 'next/image'
 const UpcomingMovies =  async () => {
-    // const response = await fetch('http://localhost:3000/api/movie');
-    // const movies = await response.json();
-    let movies=[]
+    const response = await fetch('https://movie-tickets-web-nextjs.vercel.app/api/movie');
+    const movies = await response.json();
+
   return (
     <>
     <h1 className='text-white text-center lg:text-5xl text-3xl mt-40 font-semibold  '>Upcoming Movies</h1>

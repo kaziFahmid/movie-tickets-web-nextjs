@@ -22,7 +22,7 @@ useEffect(() => {
   const fetchBookings = async () => {
     
       try {
-        const response = await fetch(`http://localhost:3000/api/booking`);
+        const response = await fetch(`https://movie-tickets-web-nextjs.vercel.app/api/booking`);
         const data = await response.json();
         setBookings(data);
       } catch (error) {
@@ -37,7 +37,7 @@ useEffect(() => {
   const fetchBookings = async () => {
     if (status === 'authenticated' && session?.user?.email) {
       try {
-        const response = await fetch(`http://localhost:3000/api/mybooking/${session.user?.email}`);
+        const response = await fetch(`https://movie-tickets-web-nextjs.vercel.app/api/mybooking/${session.user?.email}`);
         const data = await response.json();
         setMyBookings(data);
       } catch (error) {
@@ -70,7 +70,7 @@ useEffect(() => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const responseMovie = await fetch(`http://localhost:3000/api/movie/${params.id}`);
+        const responseMovie = await fetch(`https://movie-tickets-web-nextjs.vercel.app/api/movie/${params.id}`);
         const movieData = await responseMovie.json();
         setMovie(movieData);
       } catch (error) {
@@ -88,7 +88,7 @@ useEffect(() => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const responseSeats = await fetch(`http://localhost:3000/api/seats`);
+        const responseSeats = await fetch(`https://movie-tickets-web-nextjs.vercel.app/api/seats`);
         const seatsData = await responseSeats.json();
         setSeats(seatsData);
       } catch (error) {
@@ -129,18 +129,18 @@ useEffect(() => {
 
     const fetchBookings = async () => {
       try {
-        const responseMyBookings = await fetch(`http://localhost:3000/api/mybooking/${session.user?.email}`);
+        const responseMyBookings = await fetch(`https://movie-tickets-web-nextjs.vercel.app/api/mybooking/${session.user?.email}`);
         const myBookingsData = await responseMyBookings.json();
         setMyBookings(myBookingsData);
   
-        const responseAllBookings = await fetch(`http://localhost:3000/api/booking`);
+        const responseAllBookings = await fetch(`https://movie-tickets-web-nextjs.vercel.app/api/booking`);
         const allBookingsData = await responseAllBookings.json();
         setBookings(allBookingsData);
       } catch (error) {
         console.error(error);
       }
     };
-    const response = await fetch('http://localhost:3000/api/booking', {
+    const response = await fetch('https://movie-tickets-web-nextjs.vercel.app/api/booking', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

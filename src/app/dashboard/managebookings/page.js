@@ -17,7 +17,7 @@ const fetcher = async (url) => {
 
 
 const ManageBookings = () => {
-  const { data: bookings, error } = useSWR('http://localhost:3000/api/booking',fetcher);
+  const { data: bookings, error } = useSWR('https://movie-tickets-web-nextjs.vercel.app/api/booking',fetcher);
   
 
 
@@ -26,7 +26,7 @@ const ManageBookings = () => {
 
   let handleApprove= async(_id)=>{
     try {
-      await fetch(`http://localhost:3000/api/booking/${_id}`, {
+      await fetch(`https://movie-tickets-web-nextjs.vercel.app/api/booking/${_id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -34,14 +34,14 @@ const ManageBookings = () => {
         body: JSON.stringify({ status: 'approved' }),
       });
       toast.success('Successfully approved!')
-      mutate('http://localhost:3000/api/booking');
+      mutate('https://movie-tickets-web-nextjs.vercel.app/api/booking');
     } catch (error) {
       console.error('Error making user a user:', error);
     }
   }
   let handleReject=async(_id)=>{
     try {
-      await fetch(`http://localhost:3000/api/booking/${_id}`, {
+      await fetch(`https://movie-tickets-web-nextjs.vercel.app/api/booking/${_id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ const ManageBookings = () => {
         body: JSON.stringify({ status: 'rejected' }),
       });
       toast.success('Successfully rejected!')
-      mutate('http://localhost:3000/api/booking');
+      mutate('https://movie-tickets-web-nextjs.vercel.app/api/booking');
     } catch (error) {
       console.error('Error making user a user:', error);
     }
@@ -59,7 +59,7 @@ const ManageBookings = () => {
   
 let handleAcceptRefund= async(_id)=>{
   try {
-    await fetch(`http://localhost:3000/api/booking/${_id}`, {
+    await fetch(`https://movie-tickets-web-nextjs.vercel.app/api/booking/${_id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -67,7 +67,7 @@ let handleAcceptRefund= async(_id)=>{
       body: JSON.stringify({ status: 'accepted refund' }),
     });
     toast.success('Successfully Accepted Refund!')
-    mutate('http://localhost:3000/api/booking');
+    mutate('https://movie-tickets-web-nextjs.vercel.app/api/booking');
   } catch (error) {
     console.error('Error making user a user:', error);
   }

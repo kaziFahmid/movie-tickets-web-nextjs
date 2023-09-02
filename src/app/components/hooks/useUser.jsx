@@ -12,7 +12,7 @@ const fetcher = async (url) => {
 
 const useUser = () => {
     const { data: session, status } = useSession();
-    const{data:user,error}=useSWR(`http://localhost:3000/api/user/${session?.user?.email}`,fetcher)
+    const{data:user,error}=useSWR(`https://movie-tickets-web-nextjs.vercel.app/api/user/${session?.user?.email}`,fetcher)
     
   return [user]
 }

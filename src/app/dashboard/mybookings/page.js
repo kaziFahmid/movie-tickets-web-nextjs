@@ -17,7 +17,7 @@ const MyBookings = () => {
     const fetchBookings = async () => {
       if (status === 'authenticated' && session?.user?.email) {
         try {
-          const response = await fetch(`http://localhost:3000/api/mybooking/${session.user?.email}`);
+          const response = await fetch(`https://movie-tickets-web-nextjs.vercel.app/api/mybooking/${session.user?.email}`);
           const data = await response.json();
           setBookings(data);
         } catch (error) {
@@ -33,7 +33,7 @@ const MyBookings = () => {
   const fetchBookings = async () => {
     if (status === 'authenticated' && session?.user?.email) {
       try {
-        const response = await fetch(`http://localhost:3000/api/mybooking/${session.user?.email}`);
+        const response = await fetch(`https://movie-tickets-web-nextjs.vercel.app/api/mybooking/${session.user?.email}`);
         const data = await response.json();
         setBookings(data);
       } catch (error) {
@@ -42,7 +42,7 @@ const MyBookings = () => {
     }
   };
   const handleCancelBooking = async (id) => {
-    const response = await fetch(`http://localhost:3000/api/mybookings/${id}`, {
+    const response = await fetch(`https://movie-tickets-web-nextjs.vercel.app/api/mybookings/${id}`, {
             method: 'DELETE'
           });
           toast.success('Booking Canceled!')
@@ -51,7 +51,7 @@ const MyBookings = () => {
 
 let handleRequestForRefund= async(id)=>{
   try {
-    await fetch(`http://localhost:3000/api/mybookings/${id}`, {
+    await fetch(`https://movie-tickets-web-nextjs.vercel.app/api/mybookings/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -67,7 +67,7 @@ let handleRequestForRefund= async(id)=>{
 
 let handleCancelRefund= async(id)=>{
   try {
-    await fetch(`http://localhost:3000/api/mybookings/${id}`, {
+    await fetch(`https://movie-tickets-web-nextjs.vercel.app/api/mybookings/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
